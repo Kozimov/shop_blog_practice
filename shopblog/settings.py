@@ -45,7 +45,7 @@ ROOT_URLCONF = 'shopblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'frontend' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
