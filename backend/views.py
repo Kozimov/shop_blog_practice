@@ -10,8 +10,10 @@ class AboutView(TemplateView):
 class ContactView(TemplateView):
     template_name = "contact.html"
 
-class ShopSingleView(TemplateView):
+class PostShopSingleView(DetailView):
     template_name = "shop-single.html"
+    queryset = Post.objects.all()
+    context_object_name = "post"
 
 class PostListView(ListView):
     template_name = "shop.html"
