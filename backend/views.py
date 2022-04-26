@@ -10,6 +10,9 @@ class AboutView(TemplateView):
 class ContactView(TemplateView):
     template_name = "contact.html"
 
+class ShopSingleView(TemplateView):
+    template_name = "shop-single.html"
+
 class PostListView(ListView):
     template_name = "shop.html"
     queryset = Post.objects.all()
