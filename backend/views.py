@@ -1,8 +1,11 @@
 from django.views.generic import *
 from .models import *
 
-class HomeView(TemplateView):
+class HomeView(ListView):
     template_name = "home.html"
+    queryset = Carusel.objects.all()
+    context_object_name = "carusels"
+
 
 class AboutView(TemplateView):
     template_name = "about.html"
