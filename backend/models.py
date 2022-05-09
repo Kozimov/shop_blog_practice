@@ -36,3 +36,14 @@ class Carusel(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class CategoryMonth(models.Model):
+
+    title = models.CharField(max_length=255)
+    text = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="rasmlar/")
+    imageTitle = models.CharField(max_length=255)
+    buttonText = models.CharField(max_length=255)
+
+    def __str__(self):
+        return str(self.title)
