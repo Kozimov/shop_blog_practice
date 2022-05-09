@@ -3,8 +3,17 @@ from .models import *
 
 class HomeView(ListView):
     template_name = "home.html"
-    queryset = Carusel.objects.all()
-    context_object_name = "carusels"
+    
+
+    def get_queryset(self):
+        return Carusel.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        # here we can add so many context using that way
+        context['carusels'] = Carusel.objects.all()
+        context['categoryMonths'] = CategoryMonth.objects.all()
+        return context
 
 
 class AboutView(TemplateView):

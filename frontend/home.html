@@ -117,21 +117,13 @@
             </div>
         </div>
         <div class="row">
+            {% for categoryMonth in categoryMonths %}
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="{% static './img/category_img_01.j' %}pg" class="rounded-circle img-fluid border"></a>
-                <h5 class="text-center mt-3 mb-3">Watches</h5>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                <a href="#"><img src="{{ categoryMonth.image.url }}" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">{{ categoryMonth.imageTitle }}</h5>
+                <p class="text-center"><a class="btn btn-success">{{ categoryMonth.buttonText }}</a></p>
             </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="{% static './img/category_img_02.j' %}pg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-            </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="{% static './img/category_img_03.j' %}pg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-            </div>
+            {% endfor %}
         </div>
     </section>
     <!-- End Categories of The Month -->
