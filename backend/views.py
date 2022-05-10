@@ -12,8 +12,9 @@ class HomeView(ListView):
         context = super(HomeView, self).get_context_data(**kwargs)
         # here we can add so many context using that way
         context['carusels'] = Carusel.objects.all()
-        context['categoryMonthsTitle'] = CategoryMonthTitle.objects.all()
+        context['categoryMonthsTitles'] = CategoryMonthTitle.objects.all()
         context['categoryMonths'] = CategoryMonth.objects.all()
+
         return context
 
 
