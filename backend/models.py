@@ -1,6 +1,6 @@
-from distutils.command.upload import upload
-from tabnanny import verbose
 from django.db import models
+from .validators import validate_file_extension
+
 
 class Post(models.Model):
     class Meta:
@@ -56,4 +56,4 @@ class CategoryMonth(models.Model):
 class AboutUsIntro(models.Model):
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="rasmlar/")
+    image = models.FileField(validators=[validate_file_extension], upload_to="rasmlar/")
