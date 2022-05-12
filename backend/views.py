@@ -28,7 +28,8 @@ class AboutView(ListView):
         context = super(AboutView, self).get_context_data(**kwargs)
         # here we can add so many context using that way
         context['aboutUsIntros'] = AboutUsIntro.objects.all()
-        context['ourServicesTitles'] = OurService.objects.all()
+        context['ourServicesTitles'] = OurServiceTitle.objects.all()
+        context['ourServicesCards'] = OurServiceCard.objects.all()
 
         return context
     
