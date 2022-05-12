@@ -57,3 +57,7 @@ class AboutUsIntro(models.Model):
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
     image = models.FileField(validators=[validate_file_extension], upload_to="rasmlar/")
+
+class OurServices(models.Model):
+    title = models.CharField(max_length=255)
+    text = models.CharField(max_length=255)
