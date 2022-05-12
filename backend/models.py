@@ -71,3 +71,6 @@ class OurServiceTitle(models.Model):
 class OurServiceCard(models.Model):
     textIcon = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
+
+    def __str__(self):
+        return str(self.text)
