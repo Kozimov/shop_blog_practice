@@ -51,3 +51,9 @@ class CategoryMonth(models.Model):
 
     def __str__(self):
         return str(self.imageTitle)
+
+
+class AboutUsIntro(models.Model):
+    title = models.CharField(max_length=255)
+    text = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="rasmlar/")
