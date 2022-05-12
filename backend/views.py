@@ -18,8 +18,18 @@ class HomeView(ListView):
         return context
 
 
-class AboutView(TemplateView):
+class AboutView(ListView):
     template_name = "about.html"
+
+    def get_queryset(self):
+        return AboutUsIntro.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
+        # here we can add so many context using that way
+        context['aboutUsIntros'] = AboutUsIntro.objects.all()
+
+        return context
     
 class ContactView(TemplateView):
     template_name = "contact.html"
