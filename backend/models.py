@@ -84,3 +84,6 @@ class OurBrandsTitle(models.Model):
 
 class OurBrandsImage(models.Model):
     image = models.ImageField(upload_to="rasmlar/")
+
+    def __str__(self):
+        return str(self.image)
