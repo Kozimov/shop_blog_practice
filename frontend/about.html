@@ -67,7 +67,7 @@
                 </div>
             </div>
             {% endfor %}
-            
+
         </div>
     </section>
     <!-- End Section -->
@@ -77,11 +77,12 @@
         <div class="container my-4">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Our Brands</h1>
+                    {% for ourBrandsTitle in ourBrandsTitles %}
+                    <h1 class="h1">{{ ourBrandsTitle.title }}</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        Lorem ipsum dolor sit amet.
+                        {{ ourBrandsTitle.text }}
                     </p>
+                    {% endfor %}
                 </div>
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
