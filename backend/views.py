@@ -30,6 +30,7 @@ class AboutView(ListView):
         context['aboutUsIntros'] = AboutUsIntro.objects.all()
         context['ourServicesTitles'] = OurServiceTitle.objects.all()
         context['ourServicesCards'] = OurServiceCard.objects.all()
+        context['ourBrandsTitle'] = OurBrandsTitle.objects.all()
 
         return context
     
