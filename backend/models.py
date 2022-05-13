@@ -74,3 +74,10 @@ class OurServiceCard(models.Model):
 
     def __str__(self):
         return str(self.text)
+
+class OurBrandsTitle(models.Model):
+    title = models.CharField(max_length=255)
+    text = models.CharField(max_length=255)
+
+    def __str__(self):
+        return str(self.title)
