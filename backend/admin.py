@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import AboutUsIntro, CategoryMonth, CategoryMonthTitle, OurBrandsImage, OurBrandsTitle, OurServiceCard, OurServiceTitle, Post, Carusel
+from .models import AboutUsIntro, Category, CategoryMonth, CategoryMonthTitle, OurBrandsImage, OurBrandsTitle, OurServiceCard, OurServiceTitle, Post, Carusel
 
+admin.site.register(Category)
 admin.site.register(Post)
 admin.site.register(Carusel)
 admin.site.register(CategoryMonthTitle)

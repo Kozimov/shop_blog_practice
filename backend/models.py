@@ -3,6 +3,10 @@ from .validators import validate_file_extension
 
 
 class Category(models.Model):
+    class Meta:
+        verbose_name = 'Kategoriya'
+        verbose_name_plural = 'Kategoriyalar'
+
     name = models.CharField(max_length=255)
 
     def __str__(self):
