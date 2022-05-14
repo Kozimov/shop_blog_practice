@@ -45,5 +45,14 @@ class PostShopSingleView(DetailView):
 
 class PostListView(ListView):
     template_name = "shop.html"
-    queryset = Post.objects.all()
-    context_object_name = "posts"
+
+    def get_queryset(self):
+        return Post.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        # here we can add so many context using that way
+        context['posts'] = Post.objects.all()
+        context['categories'] = Category.objects.all()
+
+        return context

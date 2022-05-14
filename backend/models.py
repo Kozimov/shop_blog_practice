@@ -48,6 +48,10 @@ class Carusel(models.Model):
         return str(self.name)
 
 class CategoryMonthTitle(models.Model):
+    class Meta:
+        verbose_name = "Oyning eng yaxshi to'plami sarlavhasi"
+        verbose_name_plural = "Oyning eng yaxshi to'plami sarlavhasi"
+
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
 
@@ -55,6 +59,10 @@ class CategoryMonthTitle(models.Model):
         return str(self.title)
 
 class CategoryMonth(models.Model):
+    class Meta:
+        verbose_name = "Oyning eng yaxshi to'plami Post"
+        verbose_name_plural = "Oyning eng yaxshi to'plami Postlari"
+
     image = models.ImageField(upload_to="rasmlar/")
     imageTitle = models.CharField(max_length=255)
     buttonText = models.CharField(max_length=255)
@@ -64,6 +72,10 @@ class CategoryMonth(models.Model):
 
 
 class AboutUsIntro(models.Model):
+    class Meta:
+        verbose_name = "Biz haqimizda kirish qismi"
+        verbose_name_plural = "Biz haqimizda kirish qismlari"
+
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
     image = models.FileField(validators=[validate_file_extension], upload_to="rasmlar/")
@@ -72,6 +84,7 @@ class AboutUsIntro(models.Model):
         return str(self.title)
 
 class OurServiceTitle(models.Model):
+
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
 
@@ -79,6 +92,7 @@ class OurServiceTitle(models.Model):
         return str(self.title)
 
 class OurServiceCard(models.Model):
+
     textIcon = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
 
@@ -86,6 +100,7 @@ class OurServiceCard(models.Model):
         return str(self.text)
 
 class OurBrandsTitle(models.Model):
+
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
 
@@ -93,6 +108,7 @@ class OurBrandsTitle(models.Model):
         return str(self.title)
 
 class OurBrandsImage(models.Model):
+
     image = models.ImageField(upload_to="rasmlar/")
 
     def __str__(self):

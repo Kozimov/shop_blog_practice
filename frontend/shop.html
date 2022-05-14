@@ -36,33 +36,13 @@
                 <ul class="list-unstyled templatemo-accordion">
                     <li class="pb-3">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Gender
+                            Tanlang
                             <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
                         <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Erkak</a></li>
-                            <li><a class="text-decoration-none" href="#">Ayol</a></li>
-                        </ul>
-                    </li>
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Sale
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Sport</a></li>
-                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        </ul>
-                    </li>
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Product
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Sumka</a></li>
-                            <li><a class="text-decoration-none" href="#">Svitra</a></li>
-                            <li><a class="text-decoration-none" href="#">Ko'z oynak</a></li>
+                            {% for category in categories %}
+                            <li><a class="text-decoration-none" href="#">{{ category.name }}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                 </ul>
@@ -75,12 +55,11 @@
                             <li class="list-inline-item">
                                 <a class="h3 text-dark text-decoration-none mr-3" href="#">Hammasi</a>
                             </li>
+                            {% for category in categories %}
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Erkaklar</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">{{ category.name }}</a>
                             </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="#">Ayollar</a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="col-md-6 pb-4">
