@@ -96,4 +96,29 @@
 </div>
 <!-- End Contact -->
 
+<script>
+    let form = document.querySelector('#formm');
+    
+    form.addEventListener('submit', (e)=> {
+        e.preventDefault()
+        
+        name = form.querySelector('#name')
+        email = form.querySelector('#email')
+        number = form.querySelector('#number')
+        subject = form.querySelector('#subject')
+        message = form.querySelector('#message')
+        
+        let my_text = `Bog'lanish: %0A - Ismi: ${name.value} %0A - Email: ${email.value} %0A - Tel: ${number.value} %0A - Kasbi: ${subject.value} %0A - Xabar: ${message.value}`
+        
+        let token = '5316395942:AAEl4UDgHBzsp6z1jXmQDvjtuyxzhgj-el8';
+        let chat_id = -1001721651541
+        
+        let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+        
+        let api = new XMLHttpRequest()
+        api.open("GET", url, true)
+        api.send()
+    })
+</script>
+
 {% endblock content %}
