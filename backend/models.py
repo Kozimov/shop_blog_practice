@@ -84,6 +84,9 @@ class AboutUsIntro(models.Model):
         return str(self.title)
 
 class OurServiceTitle(models.Model):
+    class Meta:
+        verbose_name = "Bizning xizmatlar sarlavhasi"
+        verbose_name_plural = "Bizning xizmatlar sarlavhasi"
 
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
@@ -92,6 +95,9 @@ class OurServiceTitle(models.Model):
         return str(self.title)
 
 class OurServiceCard(models.Model):
+    class Meta:
+        verbose_name = "Bizning xizmatlar sarlavhasi malumot qismi"
+        verbose_name_plural = "Bizning xizmatlar sarlavhasi malumot qismlari"
 
     textIcon = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
@@ -100,6 +106,9 @@ class OurServiceCard(models.Model):
         return str(self.text)
 
 class OurBrandsTitle(models.Model):
+    class Meta:
+        verbose_name = "Bizning hamkorlar sarlavhasi"
+        verbose_name_plural = "Bizning hamkorlar sarlavhasi"
 
     title = models.CharField(max_length=255)
     text = models.CharField(max_length=255)
@@ -108,6 +117,9 @@ class OurBrandsTitle(models.Model):
         return str(self.title)
 
 class OurBrandsImage(models.Model):
+    class Meta:
+        verbose_name = "Bizning hamkorlar brandi"
+        verbose_name_plural = "Bizning hamkorlar brandlari"
 
     image = models.ImageField(upload_to="rasmlar/")
 
