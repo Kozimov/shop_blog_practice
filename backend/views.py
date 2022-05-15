@@ -45,6 +45,7 @@ class PostShopSingleView(DetailView):
 
 class PostListView(ListView):
     template_name = "shop.html"
+    
 
     def get_queryset(self):
         return Post.objects.all()
