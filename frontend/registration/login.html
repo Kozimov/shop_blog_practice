@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 
 {% block title %} Login Page {% endblock %}
 
 {% block content %}
 
-    <a href="/">Bosh sahifaga qaytish</a>
-    <hr>
+<hr>
 
+<div class="container mt-5">
+    
+    <a href="/">
+        <img src="{% static 'img/back-icon.png' %}" alt="" width="100">
+    </a>
     <form method="post">
-        <p>
+        
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+        {{form| crispy}}
+        <button type="submit" class="btn btn-success mb-lg-5 px-4 py-2">Kirish</button>
+        
     </form>
+    
+</div>
 
 {% endblock %}
