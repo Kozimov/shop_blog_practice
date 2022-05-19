@@ -22,7 +22,10 @@
                 {% endif %}
 
                 {% if request.user.is_authenticated %}
-                    {{ request.user.username }}
+                    user: {{ request.user.username }}
+                    <a href="{% url 'logout' %}">
+                        <button type="button" class="btn btn-success mx-3">Chiqish</button>
+                    </a>
                 {% else %}
                 <a href="{% url 'login' %}">
                     <button type="button" class="btn btn-success">Kirish</button>
