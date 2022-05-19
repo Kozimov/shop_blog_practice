@@ -14,7 +14,23 @@
                 <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
                 <a class="text-light" href="https://www.linkedin.com/in/ziyokhiddin-kozimov-396663237/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
             </div>
+            <div class="d-flex">
+                {% if not request.user.is_authenticated %}
+                <a href="/">
+                    <button type="button" class="btn btn-success mx-4">Ro'yxatdan o'tish</button>
+                </a>
+                {% endif %}
+
+                {% if request.user.is_authenticated %}
+                    {{ request.user.username }}
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button type="button" class="btn btn-success">Kirish</button>
+                </a>
+                {% endif %}
+            </div>
         </div>
+        
     </div>
 </nav>
 <!-- Close Top Nav -->
@@ -23,15 +39,15 @@
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
-
+        
         <a class="navbar-brand text-success logo h1 align-self-center" href="/">
             Kozimov Shop
         </a>
-
+        
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
             <div class="flex-fill">
                 <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
@@ -70,8 +86,9 @@
                     <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                 </a>
             </div>
+            
         </div>
-
+        
     </div>
 </nav>
 <!-- Close Header -->
