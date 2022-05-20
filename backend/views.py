@@ -1,5 +1,15 @@
+from django.shortcuts import reverse
 from django.views.generic import *
+
+from backend.forms import NewUserForm
 from .models import *
+
+class SignUpView(CreateView):
+    template_name = "registration/signup.html"
+    form_class = NewUserForm
+
+    def get_success_url(self):
+        return reverse("/")
 
 class HomeView(ListView):
     template_name = "home.html"
