@@ -9,7 +9,7 @@ class SignUpView(CreateView):
     form_class = NewUserForm
 
     def get_success_url(self):
-        return reverse("/")
+        return reverse("login")
 
 class HomeView(ListView):
     template_name = "home.html"
